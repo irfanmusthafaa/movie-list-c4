@@ -13,7 +13,6 @@ const fetchDataMoviesDetail = async ({ queryKey }) => {
 const useDataMoviesDetailQuery = (options) => {
   const data = useLocation();
   const [ID, setID] = useState(data.state ? data.state.idMovie : "");
-  console.log(ID, "IDD");
 
   return useQuery([`${API_ENDPOINT.DETAIL}/${ID}`, options], fetchDataMoviesDetail);
 };

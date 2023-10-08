@@ -16,15 +16,14 @@ export const PopularMovie = () => {
   });
 
   useEffect(() => {
-    console.log(moviesPopular, "ini data moviesPopular");
     setPopulars(moviesPopular);
   }, [moviesPopular]);
 
   return (
     <>
       <div className="container mx-auto px-4 mt-7">
-        <div className="my-5 flex justify-between items-center mx-6 ">
-          <Typography variant="h3" color="black" className="">
+        <div className="my-5 md:flex justify-between items-center mx-6 ">
+          <Typography variant="h3" color="black" className="mb-5 md:mb-0">
             Popular Movies
           </Typography>
           <a href="/all-movies" className="px-4 py-3 border-2 border-red-500 text-red-500 rounded-lg hover:bg-red-500 hover:text-white">

@@ -7,7 +7,6 @@ import { Typography } from "@material-tailwind/react";
 export const Search = () => {
   const location = useLocation();
   const { query } = location.state;
-  console.log(location, "use location");
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
 
@@ -20,8 +19,8 @@ export const Search = () => {
   useEffect(() => {
     setMovies(dataSearch);
     setSearch(query);
-    console.log(dataSearch, "hasil search");
-    console.log(query, "data id");
+    // console.log(dataSearch, "hasil search");
+    // console.log(query, "data id");
   }, [dataSearch]);
 
   const InputValue = () => {
@@ -41,7 +40,6 @@ export const Search = () => {
         </Typography>
       );
     }
-    return search;
   };
 
   return (
@@ -63,10 +61,6 @@ export const Search = () => {
           >
             <div className="relative group rounded-xl overflow-hidden border-2">
               <img src={`https://image.tmdb.org/t/p/original/${popular.poster_path}`} alt={popular.title} className="w-full h-auto " />
-
-              {/* <div className="absolute inset-0 flex items-center justify-center cursor-pointe bg-blue-gray-700 bg-opacity-75 text-white opacity-0 group-hover:opacity-[200] transition-opacity">
-                  <p className="text-3xl">{popular.title}</p>
-                </div> */}
             </div>
             <p className=" font-bold text-black mt-2 mb-1">{popular.title}</p>
             <p className=" text-xs font-bold text-gray-700">{popular.release_date}</p>

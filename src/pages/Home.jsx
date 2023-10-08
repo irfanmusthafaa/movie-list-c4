@@ -4,7 +4,8 @@ import { Carousel, Typography, Button } from "@material-tailwind/react";
 import { useDataMoviesNowPlayingQuery } from "../services/get-movies-nowplaying";
 import { PopularMovie } from "../assets/components/PopularMovie";
 import { Footer } from "../assets/components/Footer";
-import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
 
 export const Home = () => {
   const [nowPlayingMovies, setNowPlayingMovies] = useState([]);
@@ -16,7 +17,6 @@ export const Home = () => {
   });
 
   useEffect(() => {
-    console.log(movies, "ini data movies");
     setNowPlayingMovies(movies);
   }, [movies]);
 
@@ -48,14 +48,14 @@ export const Home = () => {
             <div className="relative h-[full] w-full">
               <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={movie.title} className="h-screen w-full object-cover" />
               <div className="absolute inset-0 grid h-full w-full justify-items-start place-items-center px-10 bg-black/75">
-                <div className="w-3/4  md:w-2/4 sm:scale-50 md:scale-100 ">
+                <div className="w-3/4  md:w-2/4  ">
                   <Typography variant="h1" color="white" className="mb-4 text-3xl md:text-4xl lg:text-5xl">
                     {movie.title}
                   </Typography>
                   <p className="mb-4 text-white opacity-80 line-clamp-3">{movie.overview}</p>
                   <div className="flex justify-start gap-2">
                     <Button size="lg" color="red">
-                      Watch Trailer
+                      <FontAwesomeIcon icon={faClock} /> Watch Trailer
                     </Button>
                   </div>
                 </div>
@@ -65,7 +65,7 @@ export const Home = () => {
         ))}
       </Carousel>
       <PopularMovie />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

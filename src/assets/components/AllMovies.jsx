@@ -23,7 +23,7 @@ export const AllMovies = () => {
 
   return (
     <>
-      <Nav color="blue-gray" variant="filled" />
+      <Nav variant="gradient" />
       <div className="my-5 flex justify-between items-center mx-6 mt-[6rem]">
         <Typography variant="h3" color="black" className="">
           Popular Movies
