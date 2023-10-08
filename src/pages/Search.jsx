@@ -19,16 +19,11 @@ export const Search = () => {
   useEffect(() => {
     setMovies(dataSearch);
     setSearch(query);
-    // console.log(dataSearch, "hasil search");
-    // console.log(query, "data id");
   }, [dataSearch]);
 
   const InputValue = () => {
     if (search !== "") {
       return (
-        // <h3 style={{ marginTop: "6rem", color: "#DADADA" }}>
-        //   <b>Search Result "{search}"</b>
-        // </h3>
         <Typography color="black" variant="h3" className="container mx-auto px-4 mt-[7rem] ">
           Search Result "{search}"
         </Typography>
@@ -44,7 +39,7 @@ export const Search = () => {
 
   return (
     <>
-      <Nav />
+      <Nav variant="gradient" />
       {<InputValue />}
       <div className=" flex flex-wrap mx-2 ">
         {movies?.map((popular) => (
